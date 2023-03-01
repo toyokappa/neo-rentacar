@@ -7,17 +7,13 @@ header
 nav
   .container
     ul
-      li
-        nuxt-link(to="/") トップ
-      li
-        nuxt-link(to="/") ご利用の流れ
-      li
-        nuxt-link(to="/") 車種/料金/保険
-      li
-        nuxt-link(to="/") 店舗情報
-      li
-        nuxt-link(to="/") 会社概要
+      li(v-for="menu in menuList" :key="menu.title")
+        nuxt-link(:to="menu.link") {{ menu.title }}
 </template>
+
+<script setup>
+import { menuList } from "~/constants";
+</script>
 
 <style lang="sass" scoped>
 header
