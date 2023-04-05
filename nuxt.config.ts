@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       }
     },
   },
-    app: {
+  app: {
     head: {
       title: pageTitle,
       htmlAttrs: {

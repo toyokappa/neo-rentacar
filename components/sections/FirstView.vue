@@ -7,12 +7,12 @@ section
       Navigation
       Pagination
   .container
-    .content
+    .content.t-center
       h1.logo NEOレンタカー
       .description.mb-3
         p 説明文
       .cell-pc.cell-3
-        PartsButton.mb-2(to="/") ご利用の流れ
+        PartsButton(to="/") ご利用の流れ
 </template>
 
 <script setup>
@@ -27,7 +27,6 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
   background-color: $grey
 .content
   padding: 50px 0
-  text-align: center
   .logo
     margin-bottom: 20px
     img
