@@ -2,13 +2,8 @@
 header
   .container
     .header-content
-      nuxt-link.logo(to="/") レンタカーロゴ
+      nuxt-link.logo(to="/") NEOレンタカー
         //- img(src="@/assets/images/logo.png" alt="Elvina" width="30" height="98")
-nav
-  .container
-    ul
-      li(v-for="menu in menuList" :key="menu.title")
-        nuxt-link(:to="menu.link") {{ menu.title }}
 </template>
 
 <script setup>

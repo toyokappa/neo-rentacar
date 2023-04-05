@@ -1,6 +1,11 @@
 <template lang="pug">
 section
-  .hero
+  Carousel(wrapAround)
+    Slide(v-for="slide in 3" :key="slide")
+      .hero 画像${{ slide }}
+    template(#addons)
+      Navigation
+      Pagination
   .container
     .content
       .concept.f-20.mb-3
@@ -16,6 +21,11 @@ section
         PartsButton.mb-2(to="/") ご利用の流れ
         PartsButton.mb-2(to="/") 店舗
 </template>
+
+<script setup>
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+</script>
 
 <style lang="sass" scoped>
 .hero
