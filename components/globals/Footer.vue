@@ -15,6 +15,8 @@ import { menuList } from "~/constants";
 <style lang="sass" scoped>
 footer
   width: 100%
+  nav
+    display: none
   @include pc
     nav
       background-color: $base

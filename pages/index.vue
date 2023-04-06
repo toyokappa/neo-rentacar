@@ -1,6 +1,7 @@
 <template lang="pug">
 SectionsFirstView
 SectionsLineup(:lineup="lineup")
+SectionsStoreInfo
 </template>
 
 <script setup>
