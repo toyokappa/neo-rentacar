@@ -9,7 +9,7 @@ section.section
           h3 {{ car.name }}
           p {{ car.price }}
     .cell-pc.cell-3
-      PartsButton(to="/") 車種の一覧を見る
+      PartsButton(to="/car") 車種の一覧を見る
 </template>
 
 <script setup>
