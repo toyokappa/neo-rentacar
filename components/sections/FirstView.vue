@@ -12,7 +12,7 @@ section
       .description.mb-3
         p 説明文
       .cell-pc.cell-3
-        PartsButton(to="/") ご利用の流れ
+        PartsButton(to="/flow") ご利用の流れ
 </template>
 
 <script setup>

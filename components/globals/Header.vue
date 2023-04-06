@@ -15,6 +15,7 @@ header
   width: 100%
   background-color: $white
   border-top: 5px solid $primary
+  border-bottom: 1px solid $base
   padding: 20px 0
   .header-content
     display: flex
