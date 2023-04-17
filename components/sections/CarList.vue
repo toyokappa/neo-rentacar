@@ -11,6 +11,7 @@ section.section
         :names="car.names"
         :priceWeekly="car.priceWeekly"
         :priceMonthly="car.priceMonthly"
+        @click="useRouter().push(`/car/${car.id}`)"
       )
 </template>
 
