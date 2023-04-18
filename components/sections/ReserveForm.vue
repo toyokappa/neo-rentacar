@@ -116,8 +116,10 @@ configure({
 
 const { serviceName, host, domain, mailBcc, mailgunKey } =
   useRuntimeConfig().public;
+const load = useLoad();
+const router = useRouter();
 const sendMail = async () => {
-  // TODO: ローディング開始
+  load.start();
   const testDomain = "kakurenbo.club"; // TODO: 後ほど削除
   const body = reserveMailBody(values, serviceName, host);
   const formData = new FormData();
@@ -140,12 +142,12 @@ const sendMail = async () => {
         Authorization: "Basic " + btoa(`api:${mailgunKey}`),
       },
     });
-    // TODO: 完了画面に遷移
+    router.push("/reserve/complete");
   } catch (err) {
-    // TODO: エラー画面に遷移
+    router.push("/reserve/error");
     throw err;
   } finally {
-    // TODO: ローディング終了
+    load.finish();
   }
 };
 </script>

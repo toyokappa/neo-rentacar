@@ -27,5 +27,5 @@ section.section
       p.mb-1 なお、返却前にガソリンスタンドで燃料を満タンにしてから、ご返却ください。
       p 超過料金等がある場合は、ご返却時に精算をいたしますので、よろしくお願い致します。
     .cell-pc.cell-3
-      PartsButton(to="/") 予約ページに進む
+      PartsButton(to="/reserve") 予約ページに進む
 </template>
