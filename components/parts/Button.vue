@@ -13,7 +13,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   color: "black",
-  inside: false,
+  outside: false,
 });
 
 const buttonStyles = computed(() => {

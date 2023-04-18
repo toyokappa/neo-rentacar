@@ -1,0 +1,38 @@
+.input-label
+  display: block
+  margin-bottom: 5px
+  .text
+    margin-right: 5px
+  .current-value
+    font-size: 16px
+  .required
+    font-size: 12px
+    font-weight: bold
+    background-color: $red
+    padding: 2px 6px
+    border-radius: 3px
+.input-field
+  font-size: 16px
+  color: $black
+  width: 100%
+  padding: 4px 8px
+  border: 1px solid $hint
+  border-radius: 3px
+  display: block
+  &.invalid
+    border-color: $red
+.input-card-field
+  width: 100%
+  padding: 6px 8px
+  border: 1px solid $hint
+  border-radius: 3px
+  display: block
+.holizontal-field
+  display: flex
+  .input-field:first-child, .input-card-field:first-child
+    margin-right: 10px
+.hidden-field
+  display: none
+.invalid-feedback
+  font-size: 12px
+  color: $red

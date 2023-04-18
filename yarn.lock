@@ -754,6 +754,18 @@
     hookable "^5.5.1"
     unhead "1.1.25"
 
+"@vee-validate/i18n@^4.8.6":
+  version "4.8.6"
+  resolved "https://registry.yarnpkg.com/@vee-validate/i18n/-/i18n-4.8.6.tgz#bfae327ae5f76e35a852ae6df0104853d564b984"
+  integrity sha512-yvmCm5nf9MnuvMBboGAjHoqCkcLP0APbk690SyabcpcEgxisAI276aSCJ0SxKxRafoptw3HImXFDbjezQqUYTg==
+
+"@vee-validate/rules@^4.8.6":
+  version "4.8.6"
+  resolved "https://registry.yarnpkg.com/@vee-validate/rules/-/rules-4.8.6.tgz#cdde61fe442b7b11c6fe93c505bd28b2d3d8c9fb"
+  integrity sha512-AswolP0nx5qWq1pArsGemFF6sCjH6D4x/GBxKlGl7qwNqtAtwRgsekk9OVRdF9vrWQ+l9fH2lC3hqj+J7FmUmA==
+  dependencies:
+    vee-validate "^4.8.6"
+
 "@vercel/nft@^0.22.6":
   version "0.22.6"
   resolved "https://registry.yarnpkg.com/@vercel/nft/-/nft-0.22.6.tgz#edb30d300bb809c0945ea4c7b87e56f634885541"
@@ -847,7 +859,7 @@
     "@vue/compiler-dom" "3.2.47"
     "@vue/shared" "3.2.47"
 
-"@vue/devtools-api@^6.4.5":
+"@vue/devtools-api@^6.4.5", "@vue/devtools-api@^6.5.0":
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.5.0.tgz#98b99425edee70b4c992692628fa1ea2c1e57d07"
   integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
@@ -4202,6 +4214,13 @@ util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
+
+vee-validate@^4.8.6:
+  version "4.8.6"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-4.8.6.tgz#918a89a7d0e39d0efc44ce5ea7cd3c427f467373"
+  integrity sha512-d8SS1mfFn3qv/QRwy9BQ/0ZmoxQT37zG7zERUSK5NvmI7gx7IbQxOIXtyYVEPaDJNI4QWopBe48q91pAQqwetA==
+  dependencies:
+    "@vue/devtools-api" "^6.5.0"
 
 vite-node@^0.29.8:
   version "0.29.8"

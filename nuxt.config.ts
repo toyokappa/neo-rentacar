@@ -1,7 +1,6 @@
 const domain = "rentacar.jp"
 const host = `https://${domain}`
-const projectName = "レンタカー"
-const serviceName = "レンタカー（仮）"
+const serviceName = "NEOレンタカー"
 const pageTitle = `激安のレンタカーなら${serviceName}`
 const description = "軽自動車の格安レンタカーのレンタリスタ、保険も完備で安心です。（仮）"
 
@@ -54,8 +53,11 @@ export default defineNuxtConfig({
   // modules: ['~/modules/sitemap'],
   runtimeConfig: {
     public: {
+      domain,
       host,
       serviceName,
+      mailBcc: ['kpmm42@gmail.com'],
+      mailgunKey: process.env.MAILGUN_KEY,
     }
   },
   router: {

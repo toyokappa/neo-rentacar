@@ -42,7 +42,7 @@ section.section
           .extend 延長 {{ car.extendMonthly.toLocaleString() }}円(税込)/日
   .container
     .cell-pc.cell-3
-      PartsButton(to="/") この車種で予約する
+      PartsButton(to="/reserve") この車種で予約する
 </template>
 
 <script setup>
