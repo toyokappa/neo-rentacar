@@ -1,28 +1,38 @@
 <template lang="pug">
 section.section
-  h2.t-center.f-24.mb-3 {{ car.category }}/{{ car.names }}
+  h2.t-center.f-24.mb-3 {{ car.category[0] }}/{{ car.name }}
   .container-xs.mb-3
     Carousel.main-photo(
       :itemsToShow="1"
       v-model="currentSlide"
     )
-      Slide(v-for="slide in 4" :key="slide")
-        .photo {{ slide }}
+      Slide(v-for="photo in car.photos" :key="photo.id")
+        img.photo(:src="photo.image.url")
     Carousel.mb-3(
       :itemsToShow="2.5"
       wrapAround
       v-model="currentSlide"
     )
-      Slide(v-for="slide in 4" :key="slide" @click="slideTo(slide - 1)")
-        .photo {{ slide }}
+      Slide(v-for="(photo, index) in car.photos" :key="photo.id" @click="slideTo(index)")
+        img.photo(:src="photo.image.url")
     .cap-list.mb-1
-      .cap(v-for="cap in car.caps" :key="cap.title")
-        .title {{ cap.title }}
+      .cap
+        .title 乗車定員
         .body
-          span.icon {{ cap.icon }}
-          span x {{ cap.value }}
+          span.icon 人
+          span x {{ car.humanCapLimit }}
+      .cap
+        .title 最適人数
+        .body
+          span.icon 人
+          span x {{ car.humanCapSuggest }}
+      .cap
+        .title 荷物の目安
+        .body
+          span.icon 物
+          span x {{ car.baggageCap }}
     ul.tags
-      li.tag(v-for="tag in car.tags" :key="tag") {{ tag }}
+      li.tag(v-for="utility in car.utilities" :key="utility") {{ utility }}
   h3.t-center.f-20.mb-3 レンタカー料金
   .container-xs.mb-3
     .price-list
@@ -67,6 +77,8 @@ const slideTo = (slide) => {
 .photo
   width: 100%
   aspect-ratio: 4/3
+  object-fit: cover
+  object-position: center center
   background-color: $base
   margin-right: 5px
 .cap-list
