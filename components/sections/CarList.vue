@@ -7,7 +7,7 @@ section.section
       .cell-pc.cell-3
         PartsCarItem.mb-2(
           v-for="car in carList" :key="car.id"
-          :photo="car.photos[0].image.url"
+          :photo="car.photos[0]?.image.url"
           :utilities="car.utilities"
           :name="car.name"
           :priceWeekly="car.priceWeekly"
