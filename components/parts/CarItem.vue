@@ -1,15 +1,14 @@
 <template lang="pug">
 .car-item
-  h3.title.mb-1 {{ category }}
   .content
     .left.me-1
-      .photo
+      img.photo(:src="photo")
     .right
-      ul.tags
-        li.tag(v-for="tag in tags" :key="tag") {{ tag }}
-      .names
+      .name
         img.icon(src="@/assets/images/car-icon.svg")
-        .text {{ names }}
+        .text {{ name }}
+      ul.tags
+        li.tag(v-for="utility in utilities" :key="utility") {{ utility }}
       table.price
         tr
           td.label ウィークリー
@@ -27,8 +26,8 @@
 const props = defineProps({
   category: String,
   photo: String,
-  tags: Array,
-  names: String,
+  utilities: Array,
+  name: String,
   priceWeekly: Number,
   priceMonthly: Number,
 });
@@ -47,6 +46,8 @@ const props = defineProps({
       .photo
         width: 120px
         height: 120px
+        object-fit: cover
+        object-position: center center
         background-color: $base
     .right
       .tags
@@ -61,12 +62,13 @@ const props = defineProps({
           border-radius: 3px
           margin-right: 3px
           margin-bottom: 3px
-      .names
+      .name
         display: flex
         align-items: center
-        font-size: 12px
         margin-bottom: 5px
         .icon
+          width: 20px
+          height: auto
           margin-right: 5px
       .price
         border-collapse: spacing

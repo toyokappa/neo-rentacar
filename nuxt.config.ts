@@ -50,7 +50,11 @@ export default defineNuxtConfig({
       ],
     }
   },
-  // modules: ['~/modules/sitemap'],
+  modules: ['nuxt-microcms-module'],
+  microCMS: {
+    serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
+    apiKey: process.env.MICROCMS_API_KEY,
+  },
   runtimeConfig: {
     public: {
       domain,
