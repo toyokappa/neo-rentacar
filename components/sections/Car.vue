@@ -19,18 +19,18 @@ section.section
       .cap
         .title 乗車定員
         .body
-          span.icon 人
-          span x {{ car.humanCapLimit }}
+          img.icon(src="@/assets/images/human-icon.svg")
+          span × {{ car.humanCapLimit }}
       .cap
         .title 最適人数
         .body
-          span.icon 人
-          span x {{ car.humanCapSuggest }}
+          img.icon(src="@/assets/images/human-icon.svg")
+          span × {{ car.humanCapSuggest }}
       .cap
         .title 荷物の目安
         .body
-          span.icon 物
-          span x {{ car.baggageCap }}
+          img.icon(src="@/assets/images/baggage-icon.svg")
+          span × {{ car.baggageCap }}
     ul.tags
       li.tag(v-for="utility in car.utilities" :key="utility") {{ utility }}
   h3.t-center.f-20.mb-3 レンタカー料金
@@ -95,6 +95,9 @@ const slideTo = (slide) => {
       padding: 3px 0
       border-radius: 3px
     .body
+      display: flex
+      justify-content: center
+      align-items: center
       padding: 10px 0
 .tags
   list-style: none
