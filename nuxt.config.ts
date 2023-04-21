@@ -6,7 +6,7 @@ const description = "軽自動車の格安レンタカーのレンタリスタ�
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
+  // ssr: false,
   css: [
     "@/assets/styles/reset.css",
   ],
