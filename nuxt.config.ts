@@ -66,7 +66,7 @@ export default defineNuxtConfig({
   },
   router: {
     options: {
-      strict: true
+      // strict: true 一旦外す
     }
   },
 })
