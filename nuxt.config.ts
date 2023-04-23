@@ -69,4 +69,20 @@ export default defineNuxtConfig({
       // strict: true 一旦外す
     }
   },
+  hooks: {
+    async "nitro:config"(nitroConfig) {
+      if (nitroConfig.dev) {
+        return;
+      }
+      const { data } = await useMicroCMSGetList({
+        endpoint: "cars",
+      })
+      if (nitroConfig.prerender?.routes === undefined) {
+        return;
+      }
+      nitroConfig.prerender.routes = data.value?.contents.map((mount: any) => {
+        return `/cars/${mount.id}`;
+      });
+    }, 
+  }
 })
