@@ -2,8 +2,9 @@
 header
   .container
     .header-content
-      nuxt-link.logo(to="/") NEOレンタカー
-        //- img(src="@/assets/images/logo.png" alt="Elvina" width="30" height="98")
+      nuxt-link.logo(to="/")
+        img(src="@/assets/images/logo.png" alt="Elvina" width="30" height="98")
+        .text NEOレンタカー
 </template>
 
 <script setup>
@@ -16,15 +17,20 @@ header
   background-color: $white
   border-top: 5px solid $primary
   border-bottom: 1px solid $base
-  padding: 20px 0
+  padding: 10px 0
   .header-content
     display: flex
     align-items: center
     justify-content: flex-start
   .logo
+    display: flex
+    align-items: center
     img
-      height: 30px
+      height: 50px
       width: auto
+      margin-right: 10px
+    .text
+      font-weight: bold
 nav
   background-color: $primary
   ul
