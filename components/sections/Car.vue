@@ -72,7 +72,7 @@ const slideTo = (slide) => {
 
 <style lang="sass">
 .main-photo
-  .caroucell__track
+  .carousel__track
     touch-action: inherit
 </style>
 
