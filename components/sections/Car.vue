@@ -4,6 +4,7 @@ section.section
   .container-xs.mb-3
     Carousel.main-photo(
       :itemsToShow="1"
+      :touchDrag="false"
       v-model="currentSlide"
     )
       Slide(v-for="photo in car.fields.photos" :key="photo.sys.id")
