@@ -51,9 +51,16 @@ section.section.bg-dark
           :class="{ invalid: carError }"
         )
           option(value="") 車種を選択してください
-          option(value="軽自動車") 軽自動車
-          option(value="軽バン") 軽バン
-          option(value="軽トラ") 軽トラ
+          optgroup(
+            v-for="(names, category) in categoryList"
+            :key="category"
+            :label="category"
+          )
+            option(
+              v-for="name in names"
+              :key="name"
+              :value="name"
+            ) {{ name }}
         .invalid-feedback(v-if="carError") {{ carError }}
       .cell-pc.cell-3.mb-2
         label.input-label(for="datetime")
@@ -85,7 +92,16 @@ import { useField, useForm, configure } from "vee-validate";
 import { localize } from "@vee-validate/i18n";
 import { reserveMailBody } from "@/utils/mailTemplate";
 
-const { meta, values } = useForm();
+const props = defineProps({
+  categoryList: Object,
+});
+
+const { query } = useRoute();
+const { meta, values } = useForm({
+  initialValues: {
+    car: query.car,
+  },
+});
 const { value: name, errorMessage: nameError } = useField("name", "required");
 const { value: email, errorMessage: emailError } = useField(
   "email",
