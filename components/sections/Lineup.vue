@@ -4,7 +4,7 @@ section.section
   .container
     .cell-pc.cell-2
       .car.mb-3(v-for="car in lineup" :key="car.name")
-        .eyecatch.mb-1
+        img.eyecatch.mb-1(:src="car.photo")
         .t-center
           h3 {{ car.name }}
           p {{ car.price }}
@@ -18,6 +18,4 @@ const props = defineProps({
 });
 </script>
 
-<style lang="sass">
-// これをやらないとGlobalなcssが効かなくなる
-</style>
+<style lang="sass"></style>
