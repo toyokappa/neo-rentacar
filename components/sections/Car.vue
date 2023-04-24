@@ -70,6 +70,12 @@ const slideTo = (slide) => {
 };
 </script>
 
+<style lang="sass">
+.main-photo
+  .caroucell__track
+    touch-action: inherit
+</style>
+
 <style lang="sass" scoped>
 .main-photo
   margin-bottom: 5px
