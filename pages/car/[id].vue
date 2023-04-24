@@ -4,11 +4,14 @@ SectionsStoreInfo
 </template>
 
 <script setup>
-const { id } = useRoute().params;
+import * as ctf from "contentful";
 
-const { data } = await useMicroCMSGetListDetail({
-  endpoint: "cars",
-  contentId: id,
+const config = useRuntimeConfig();
+const contentful = ctf.createClient({
+  space: config.public.ctf.spaceId,
+  accessToken: config.public.ctf.accessToken,
 });
-const car = data.value;
+
+const { id } = useRoute().params;
+const car = await contentful.getEntry(id);
 </script>

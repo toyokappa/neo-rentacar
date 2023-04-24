@@ -4,9 +4,17 @@ SectionsStoreInfo
 </template>
 
 <script setup>
-const { data } = await useMicroCMSGetList({
-  endpoint: "cars",
+import * as ctf from "contentful";
+
+const config = useRuntimeConfig();
+const contentful = ctf.createClient({
+  space: config.public.ctf.spaceId,
+  accessToken: config.public.ctf.accessToken,
 });
-const cars = data.value.contents;
-const categoryList = groupBy(cars, "category");
+const { items: cars } = await contentful.getEntries({
+  content_type: "car",
+  order: "sys.createdAt",
+});
+
+const categoryList = groupBy(cars, ["fields", "category"]);
 </script>

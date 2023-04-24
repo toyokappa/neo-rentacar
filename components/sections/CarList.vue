@@ -6,13 +6,13 @@ section.section
       h3.title.mb-1 {{ category }}
       .cell-pc.cell-3
         PartsCarItem.mb-2(
-          v-for="car in carList" :key="car.id"
-          :photo="car.photos[0]?.image.url"
-          :utilities="car.utilities"
-          :name="car.name"
-          :priceWeekly="car.priceWeekly"
-          :priceMonthly="car.priceMonthly"
-          @click="useRouter().push(`/car/${car.id}`)"
+          v-for="car in carList" :key="car.sys.id"
+          :photo="car.fields.photos[0].fields.file.url"
+          :utilities="car.fields.utilities"
+          :name="car.fields.name"
+          :priceWeekly="car.fields.priceWeekly"
+          :priceMonthly="car.fields.priceMonthly"
+          @click="useRouter().push(`/car/${car.sys.id}`)"
         )
 </template>
 

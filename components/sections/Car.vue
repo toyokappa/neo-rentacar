@@ -1,38 +1,38 @@
 <template lang="pug">
 section.section
-  h2.t-center.f-24.mb-3 {{ car.category[0] }}/{{ car.name }}
+  h2.t-center.f-24.mb-3 {{ car.fields.category }}/{{ car.fields.name }}
   .container-xs.mb-3
     Carousel.main-photo(
       :itemsToShow="1"
       v-model="currentSlide"
     )
-      Slide(v-for="photo in car.photos" :key="photo.id")
-        img.photo(:src="photo.image.url")
+      Slide(v-for="photo in car.fields.photos" :key="photo.sys.id")
+        img.photo(:src="photo.fields.file.url")
     Carousel.mb-3(
       :itemsToShow="2.5"
       wrapAround
       v-model="currentSlide"
     )
-      Slide(v-for="(photo, index) in car.photos" :key="photo.id" @click="slideTo(index)")
-        img.photo(:src="photo.image.url")
+      Slide(v-for="(photo, index) in car.fields.photos" :key="photo.sys.id" @click="slideTo(index)")
+        img.photo(:src="photo.fields.file.url")
     .cap-list.mb-1
       .cap
         .title 乗車定員
         .body
           img.icon(src="@/assets/images/human-icon.svg")
-          span × {{ car.humanCapLimit }}
+          span × {{ car.fields.humanCapLimit }}
       .cap
         .title 最適人数
         .body
           img.icon(src="@/assets/images/human-icon.svg")
-          span × {{ car.humanCapSuggest }}
+          span × {{ car.fields.humanCapSuggest }}
       .cap
         .title 荷物の目安
         .body
           img.icon(src="@/assets/images/baggage-icon.svg")
-          span × {{ car.baggageCap }}
+          span × {{ car.fields.baggageCap }}
     ul.tags
-      li.tag(v-for="utility in car.utilities" :key="utility") {{ utility }}
+      li.tag(v-for="utility in car.fields.utilities" :key="utility") {{ utility }}
   h3.t-center.f-20.mb-3 レンタカー料金
   .container-xs.mb-3
     .price-list
@@ -40,16 +40,16 @@ section.section
         .title ウィークリー
         .body
           .amount
-            span.value {{ car.priceWeekly.toLocaleString() }}円
+            span.value {{ car.fields.priceWeekly.toLocaleString() }}円
             span.unit (税込)
-          .extend 延長 {{ car.extendWeekly.toLocaleString() }}円(税込)/日
+          .extend 延長 {{ car.fields.extendWeekly.toLocaleString() }}円(税込)/日
       .price
         .title マンスリー
         .body
           .amount
-            span.value {{ car.priceMonthly.toLocaleString() }}円
+            span.value {{ car.fields.priceMonthly.toLocaleString() }}円
             span.unit (税込)
-          .extend 延長 {{ car.extendMonthly.toLocaleString() }}円(税込)/日
+          .extend 延長 {{ car.fields.extendMonthly.toLocaleString() }}円(税込)/日
   .container
     .cell-pc.cell-3
       PartsButton(to="/reserve") この車種で予約する

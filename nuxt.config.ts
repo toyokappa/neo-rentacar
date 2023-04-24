@@ -6,7 +6,7 @@ const description = "軽自動車の格安レンタカーのレンタリスタ�
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // ssr: false,
+  ssr: false,
   css: [
     "@/assets/styles/reset.css",
   ],
@@ -50,11 +50,6 @@ export default defineNuxtConfig({
       ],
     }
   },
-  modules: ['nuxt-microcms-module'],
-  microCMS: {
-    serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
-    apiKey: process.env.MICROCMS_API_KEY,
-  },
   runtimeConfig: {
     public: {
       domain,
@@ -62,6 +57,10 @@ export default defineNuxtConfig({
       serviceName,
       mailBcc: ['kpmm42@gmail.com'],
       mailgunKey: process.env.MAILGUN_KEY,
+      ctf: {
+        spaceId: process.env.CTF_SPACE_ID,
+        accessToken: process.env.CTF_ACCESS_TOKEN,
+      }
     }
   },
   router: {
@@ -69,20 +68,4 @@ export default defineNuxtConfig({
       // strict: true 一旦外す
     }
   },
-  hooks: {
-    async "nitro:config"(nitroConfig) {
-      if (nitroConfig.dev) {
-        return;
-      }
-      const { data } = await useMicroCMSGetList({
-        endpoint: "cars",
-      })
-      if (nitroConfig.prerender?.routes === undefined) {
-        return;
-      }
-      nitroConfig.prerender.routes = data.value?.contents.map((mount: any) => {
-        return `/cars/${mount.id}`;
-      });
-    }, 
-  }
 })
