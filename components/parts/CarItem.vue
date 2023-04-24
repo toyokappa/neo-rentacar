@@ -35,11 +35,6 @@ const props = defineProps({
 
 <style lang="sass" scoped>
 .car-item
-  .title
-    width: 100%
-    padding: 10px 20px
-    color: $white
-    background-color: $grey
   .content
     display: flex
     .left
@@ -50,18 +45,6 @@ const props = defineProps({
         object-position: center center
         background-color: $base
     .right
-      .tags
-        list-style: none
-        display: flex
-        flex-wrap: wrap
-        .tag
-          padding: 3px 6px
-          font-size: 12px
-          color: $white
-          background-color: $grey
-          border-radius: 3px
-          margin-right: 3px
-          margin-bottom: 3px
       .name
         display: flex
         align-items: center
@@ -77,7 +60,7 @@ const props = defineProps({
           .label
             font-size: 12px
             color: $white
-            background-color: $grey
+            background-color: $primary
             padding: 3px 6px
             border-right: 10px solid $white
           .value

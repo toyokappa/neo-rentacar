@@ -99,18 +99,6 @@ const slideTo = (slide) => {
       justify-content: center
       align-items: center
       padding: 10px 0
-.tags
-  list-style: none
-  display: flex
-  flex-wrap: wrap
-  .tag
-    padding: 3px 6px
-    font-size: 12px
-    color: $white
-    background-color: $grey
-    border-radius: 3px
-    margin-right: 3px
-    margin-bottom: 3px
 .price-list
   display: flex
   .price
@@ -120,10 +108,11 @@ const slideTo = (slide) => {
     &:last-child
       margin-right: 0
     .title
-      background-color: $grey
+      color: $white
+      background-color: $primary
       padding: 5px 0
     .body
-      border: 1px solid $grey
+      border: 1px solid $primary
       padding: 10px 0
       .amount
         font-weight: bold

@@ -5,7 +5,7 @@ section.section
     .category(v-for="(carList, category) in categoryList" :key="category")
       h3.title.mb-1 {{ category }}
       .cell-pc.cell-3
-        PartsCarItem.mb-2(
+        PartsCarItem.mb-3(
           v-for="car in carList" :key="car.sys.id"
           :photo="car.fields.photos[0].fields.file.url"
           :utilities="car.fields.utilities"
@@ -27,5 +27,5 @@ const props = defineProps({
   width: 100%
   padding: 10px 20px
   color: $white
-  background-color: $grey
+  background-color: $primary
 </style>
