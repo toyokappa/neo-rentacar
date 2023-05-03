@@ -130,18 +130,17 @@ configure({
   }),
 });
 
-const { serviceName, host, domain, mailBcc, mailgunKey } =
+const { serviceName, host, domain, mailDomain, mailBcc, mailgunKey } =
   useRuntimeConfig().public;
 const load = useLoad();
 const router = useRouter();
 const sendMail = async () => {
   load.start();
-  const testDomain = "kakurenbo.club"; // TODO: 後ほど削除
   const body = reserveMailBody(values, serviceName, host);
   const formData = new FormData();
   formData.append(
     "from",
-    `${serviceName} Web予約フォーム <info@${testDomain || domain}>`
+    `${serviceName} Web予約フォーム <info@${mailDomain || domain}>`
   );
   formData.append("to", email.value);
   formData.append("bcc", mailBcc);
@@ -149,7 +148,7 @@ const sendMail = async () => {
   formData.append("text", body);
   try {
     const mailEndpoint = `https://api.mailgun.net/v3/mg.${
-      testDomain || domain
+      mailDomain || domain
     }/messages`;
     await $fetch(mailEndpoint, {
       method: "POST",

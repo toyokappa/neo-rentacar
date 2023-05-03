@@ -1,4 +1,5 @@
-const domain = "rentacar.jp"
+const domain = "rentacar.tpfneo.com"
+const mailDomain = "tpfneo.com"
 const host = `https://${domain}`
 const serviceName = "NEOレンタカー"
 const pageTitle = `激安のレンタカーなら${serviceName}`
@@ -53,9 +54,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       domain,
+      mailDomain,
       host,
       serviceName,
-      mailBcc: ['kpmm42@gmail.com'],
+      mailBcc: ['kpmm42@gmail.com', 'armkensetu@yahoo.co.jp'],
       mailgunKey: process.env.MAILGUN_KEY,
       ctf: {
         spaceId: process.env.CTF_SPACE_ID,
