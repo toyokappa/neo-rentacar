@@ -18,7 +18,7 @@ const props = defineProps({
 });
 </script>
 
-<style lang="sass" scope>
+<style lang="sass" scoped>
 .eyecatch
   aspect-ratio: 1
 </style>
