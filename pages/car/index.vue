@@ -13,7 +13,7 @@ const contentful = ctf.createClient({
 });
 const { items: cars } = await contentful.getEntries({
   content_type: "car",
-  order: "sys.createdAt",
+  order: "-fields.category",
 });
 
 const categoryList = groupBy(cars, ["fields", "category"]);

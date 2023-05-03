@@ -7,7 +7,7 @@ section.section
         img.eyecatch.mb-1(:src="car.photo")
         .t-center
           h3 {{ car.name }}
-          p {{ car.price }}
+          p {{ car.price }}~
     .cell-pc.cell-3
       PartsButton(to="/car") 車種の一覧を見る
 </template>
@@ -18,4 +18,7 @@ const props = defineProps({
 });
 </script>
 
-<style lang="sass"></style>
+<style lang="sass" scope>
+.eyecatch
+  aspect-ratio: 1
+</style>

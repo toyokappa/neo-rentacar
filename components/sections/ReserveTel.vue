@@ -6,7 +6,7 @@ section.section
       img.icon.me-1(src="@/assets/images/tel-icon.svg")
       .number
         .f-14 営業時間: xx:00~xx:00
-        .f-24 0276-XX-XXXX
+        .f-24 0276-58-5128
 </template>
 
 <style lang="sass">
